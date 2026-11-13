@@ -27,8 +27,11 @@ jobs:
             -configuration Release \
             -archivePath "$PWD/Cork.xcarchive" \
             -destination "generic/platform=macOS" \
+            -skipPackagePluginValidation \
+            -skipMacroValidation \
             CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" \
-            archive | tail -30
+            archive
+
 
       - name: Package
         run: |
